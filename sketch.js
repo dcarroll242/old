@@ -59,15 +59,14 @@ function draw() {
   fill(0,0,255);
   ellipse(width/2, height/2, size*5, size*5);
   // image(monster1Image, width/8, height/5, monster1Image.width*monsterScale, monster1Image.height*monsterScale);
-  // if(size == 0) {size = .01;}
-  image(mickeyImage, mouseX-(mickeyImage.width*scale/2), mouseY-(mickeyImage.height*scale/2), mickeyImage.width*scale, mickeyImage.height*scale);
-  if(mouseX >= width/8 && mouseX <= width/8 + monster1Image.width*monsterScale &&
-      mouseY >= height/5 && mouseY <= height/5 + monster1Image.height*monsterScale &&
-      !roar.isPlaying()){
-    roar.play();
-    fill(255,0,0);
-    ellipse(width/8 + monster1Image.width*monsterScale/2, height/5 + monster1Image.height*monsterScale/2, 200, 200);
-  }
+  // image(mickeyImage, mouseX-(mickeyImage.width*scale/2), mouseY-(mickeyImage.height*scale/2), mickeyImage.width*scale, mickeyImage.height*scale);
+  // if(mouseX >= width/8 && mouseX <= width/8 + monster1Image.width*monsterScale &&
+  //     mouseY >= height/5 && mouseY <= height/5 + monster1Image.height*monsterScale &&
+  //     !roar.isPlaying()){
+  //   roar.play();
+  //   fill(255,0,0);
+  //   ellipse(width/8 + monster1Image.width*monsterScale/2, height/5 + monster1Image.height*monsterScale/2, 200, 200);
+  // }
 
   var spectrum = fft.analyze();
   noStroke();
@@ -95,28 +94,28 @@ function draw() {
   }
   endShape();
 
-  image(monster1Image, width/8, height/5, monster1Image.width*monsterScale, monster1Image.height*monsterScale);
+  // image(monster1Image, width/8, height/5, monster1Image.width*monsterScale, monster1Image.height*monsterScale);
 }
 
-function mousePressed(){
-  if(hoohoo.isPlaying()){
-    hoohoo.stop();
-  }
-  mickey.play();
-  fill("yellow");
-  ellipse(mouseX, mouseY, 350, 350);
-}
+// function mousePressed(){
+//   if(hoohoo.isPlaying()){
+//     hoohoo.stop();
+//   }
+//   mickey.play();
+//   fill("yellow");
+//   ellipse(mouseX, mouseY, 350, 350);
+// }
 
-function mouseMoved(){
-  if (!wind.isPlaying() && !mickey.isPlaying()){
-    wind.play();
-  }
-}
+// function mouseMoved(){
+//   if (!wind.isPlaying() && !mickey.isPlaying()){
+//     wind.play();
+//   }
+// }
 
 function keyTyped(){
-  if (key === 'a'){
-    applause.play();
-  }
+  // if (key === 'a'){
+  //   applause.play();
+  // }
   if (key === 'r' && mic.enabled) {
     // Tell recorder to record to a p5.SoundFile which we will use for playback
     recorder.record(soundFile);
