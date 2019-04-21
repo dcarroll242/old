@@ -46,6 +46,8 @@ function setup() {
 
   fft = new p5.FFT();
   fft.setInput(mic);
+
+  applause.play();
 }
 
 function draw() {
@@ -114,9 +116,9 @@ function draw() {
 // }
 
 function keyTyped(){
-  if (key === 'a'){
-    applause.play();
-  }
+  // if (key === 'a'){
+  //   applause.play();
+  // }
   if (key === 'r' && mic.enabled) {
     // Tell recorder to record to a p5.SoundFile which we will use for playback
     recorder.record(soundFile);
